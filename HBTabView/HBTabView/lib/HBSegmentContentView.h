@@ -45,6 +45,8 @@
 - (void)addContainerViewsWithViewControllers:(NSArray <UIViewController *> *)viewControllers;
 - (void)reloadData;
 
+- (void)removeAllContainerViews;
+
 @end
 
 

@@ -54,6 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)showItems;
 
+- (void)removeAllItems;
+
 /**
  通过索引设置选中指定item
 

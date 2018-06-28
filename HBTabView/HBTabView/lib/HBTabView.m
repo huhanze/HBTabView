@@ -79,6 +79,18 @@ static CGFloat const kVerticalBarW = 80;
     [self addSubview:_segmentBar];
     [self addSubview:_segementContentView];
     [self handleSegmentBarAndContentViewScrollEvent];
+    [self addNotifications];
+}
+
+- (void)addNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMemoryWarning:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+}
+
+- (void)didReceiveMemoryWarning:(id)obj {
+    [self.itemsInfo removeAllObjects];
+    self.itemsInfo = nil;
+    [self.segmentBar removeAllItems];
+    [self.segementContentView removeAllContainerViews];
 }
 
 #pragma mark - 添加item及contentView

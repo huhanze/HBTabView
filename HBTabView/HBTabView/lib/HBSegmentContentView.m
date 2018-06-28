@@ -61,7 +61,9 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
     } else {
         self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     }
+    self.backgroundColor = [UIColor whiteColor];
     _collectionView = [[HBCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
+    _collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_collectionView];
     _collectionView.bounces = NO;
     _collectionView.dataSource = self;
@@ -199,6 +201,16 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
         [cell.contentView addSubview:containerVC.view];
         containerVC.view.frame = cell.contentView.bounds;
     }
+}
+
+- (void)removeAllContainerViews {
+    [self.containers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj.view removeFromSuperview];
+        [obj removeFromParentViewController];
+    }];
+    [self.containers removeAllObjects];
+    self.containers = nil;
+    [self.collectionView reloadData];
 }
 
 @end

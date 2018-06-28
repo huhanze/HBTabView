@@ -288,6 +288,14 @@ static const NSInteger kBaseItemTag = 10000;
     }
 }
 
+- (void)removeAllItems {
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    [self.items removeAllObjects];
+    self.items = nil;
+}
+
 @end
 
 
