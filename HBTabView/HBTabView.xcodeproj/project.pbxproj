@@ -31,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		F711631520D223DB0022DC07 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
-		F73806BC20E36C7600B5A563 /* UIView+HHBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+HHBExtension.h"; path = "../../../../HHBKit/HHBKit/HHBKit/Category/UIView+HHBExtension.h"; sourceTree = "<group>"; };
 		F76A05E120CE14BA00B9D241 /* HBTabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBTabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A05E420CE14BA00B9D241 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F76A05E520CE14BA00B9D241 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		F79EB16020E2308F0045F10D /* HBHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBHorizontalViewController.m; sourceTree = "<group>"; };
 		F79EB16220E230A20045F10D /* HBVerticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBVerticalViewController.h; sourceTree = "<group>"; };
 		F79EB16320E230A20045F10D /* HBVerticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBVerticalViewController.m; sourceTree = "<group>"; };
+		F7A61A0D20E4A7E800CEA1BF /* UIView+HHBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHBExtension.h"; sourceTree = "<group>"; };
 		F7A7242320D1133D00B8FE5E /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
 		F7A7242420D1133D00B8FE5E /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,7 +96,7 @@
 		F73806BA20E36C6700B5A563 /* category */ = {
 			isa = PBXGroup;
 			children = (
-				F73806BC20E36C7600B5A563 /* UIView+HHBExtension.h */,
+				F7A61A0D20E4A7E800CEA1BF /* UIView+HHBExtension.h */,
 				F799993020CF64BB0094CD9B /* UIView+HHBExtension.m */,
 			);
 			path = category;

@@ -12,7 +12,7 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
 
 @interface HBSegmentContentView () <UICollectionViewDelegate,UICollectionViewDataSource>
 /// 内容展示，这里使用CollectionView
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) HBCollectionView *collectionView;
 /// 存储显示View的容器
 @property (nonatomic, strong) NSMutableArray <UIViewController *> *containers;
 /// UICollectionView布局，这里使用流式布局
@@ -61,7 +61,7 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
     } else {
         self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     }
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
+    _collectionView = [[HBCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
     [self addSubview:_collectionView];
     _collectionView.bounces = NO;
     _collectionView.dataSource = self;
@@ -69,6 +69,16 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
     _collectionView.pagingEnabled = YES;
     self.flowLayout.itemSize = _collectionView.bounds.size;
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reusedIdentifier];
+    __weak typeof(self) weakSelf = self;
+    _collectionView.panGestureShouldBeginBlock = ^BOOL(UICollectionView *collectionView, UIPanGestureRecognizer *panGesture) {
+        CGFloat transionX = [panGesture translationInView:panGesture.view].x;
+        BOOL canPop = NO;
+        if (collectionView.contentOffset.x == 0 && transionX > 0) {
+            canPop = YES;
+        }
+        !weakSelf.segmentContentViewPanGestureBlock ?: weakSelf.segmentContentViewPanGestureBlock(canPop);
+        return YES;
+    };
 }
 
 #pragma mark 添加单个控制器
@@ -110,10 +120,8 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
     self.preIndex = self.currentIndex;
     self.currentIndex = index;
 
-    if (self.collectionViewDidEndDragingBlock) {
-        self.collectionViewDidEndDragingBlock(self.currentIndex);
-    }
-    
+    !self.segmentContentViewDidEndDragingBlock ?: self.segmentContentViewDidEndDragingBlock(self.currentIndex);
+
     NSLog(@"contentSize : %@ contentOffset : %@\n currentIndex: %zd",NSStringFromCGSize(scrollView.contentSize),NSStringFromCGPoint(scrollView.contentOffset),self.currentIndex);
 }
 
@@ -123,23 +131,39 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-//    CGFloat tempProgress = scrollView.contentOffset.x / self.bounds.size.width;
-//    NSInteger tempIndex = tempProgress;
-//
-//    CGFloat progress = tempProgress - floorf(tempProgress);
-//    CGFloat moveDistance = scrollView.contentOffset.x - self.startDragingOffset.x;
-//
-//    if (moveDistance > 0) { // 向左
-//        if (progress == 0.0) {
-//            return;
-//        }
-//        self.currentIndex = tempIndex + 1;
-//        self.preIndex = tempIndex;
-//    } else if (moveDistance < 0) {
-//        progress = 1.0 - progress;
-//        self.preIndex = tempIndex + 1;
-//        self.currentIndex = tempIndex;
-//    }
+    CGFloat tempProgress = scrollView.contentOffset.x / self.bounds.size.width;
+    CGFloat moveDistance = scrollView.contentOffset.x - self.startDragingOffset.x;
+    if (self.showType == HBTabViewShowTypeVertical) {
+        tempProgress = scrollView.contentOffset.y / self.bounds.size.height;
+        moveDistance = scrollView.contentOffset.y - self.startDragingOffset.y;
+    }
+    CGFloat progress = tempProgress - floorf(tempProgress);
+    NSInteger tempIndex = tempProgress;
+
+    
+    if (moveDistance > 0) { // 向左或向上滑动
+        if (progress == 0.0) {
+            return;
+        }
+        self.currentIndex = tempIndex + 1;
+        self.preIndex = tempIndex;
+    } else if (moveDistance < 0) {
+        progress = 1.0 - progress;
+        self.currentIndex = tempIndex;
+        self.preIndex = tempIndex + 1;
+    }
+    
+    !self.segmentContentViewDidScrollBlock ?: self.segmentContentViewDidScrollBlock(scrollView,self.preIndex,self.currentIndex,progress);
+
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger currentIndex = (scrollView.contentOffset.x / self.bounds.size.width);
+    if (self.showType == HBTabViewShowTypeVertical) {
+        currentIndex = scrollView.contentOffset.y / self.bounds.size.height;
+    }
+    
+    !self.segmentContentViewDidEndDeceleratingBlock ?: self.segmentContentViewDidEndDeceleratingBlock(currentIndex);
 }
 
 #pragma mark - UICollectionViewDelegate方法
@@ -178,4 +202,20 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
 }
 
 @end
+
+@interface HBCollectionView ()
+
+@end
+
+@implementation HBCollectionView
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.panGestureShouldBeginBlock && gestureRecognizer == self.panGestureRecognizer) {
+        return self.panGestureShouldBeginBlock(self,self.panGestureRecognizer);
+    }
+    return [super gestureRecognizerShouldBegin:gestureRecognizer];
+}
+
+@end
+
 

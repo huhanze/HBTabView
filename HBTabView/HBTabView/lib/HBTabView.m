@@ -103,20 +103,30 @@ static CGFloat const kVerticalBarW = 80;
         [weakSelf.segementContentView scrollToPageWithIndex:index];
     };
     // contentView停止拖拽
-    self.segementContentView.collectionViewDidEndDragingBlock = ^(NSInteger currentPageIndex) {
-        [weakSelf.segmentBar selectItemWithIndex:currentPageIndex];
+    self.segementContentView.segmentContentViewDidEndDragingBlock = ^(NSInteger currentPageIndex) {
+        [weakSelf.segmentBar adjustIndictorPositionWithIndex:currentPageIndex];
     };
     
-    self.segementContentView.collectionViewDidEndDisplayingCellBlock = ^(NSInteger currentPageIndex) {
+    self.segementContentView.segmentContentViewDidEndDisplayingCellBlock = ^(NSInteger currentPageIndex) {
         if (weakSelf.segmentBar.currentIndex != currentPageIndex) {
             [weakSelf.segementContentView scrollToPageWithIndex:currentPageIndex];
         }
     };
     
-    self.segementContentView.scrollViewDidScrollBlock = ^(UIScrollView *scrollView) {
-       
+    self.segementContentView.segmentContentViewDidScrollBlock = ^(UIScrollView *scrollView, NSInteger fromIndex, NSInteger toIndex, CGFloat progress) {
+        [weakSelf.segmentBar indicatorScrollFromIndex:fromIndex toIndex:toIndex progress:progress];
+    };
+    
+    self.segementContentView.segmentContentViewDidEndDeceleratingBlock = ^(NSInteger currentPageIndex) {
+        [weakSelf.segmentBar adjustIndictorPositionWithIndex:currentPageIndex];
     };
 
+    self.segementContentView.segmentContentViewPanGestureBlock = ^(BOOL canPop) {
+        UINavigationController *nav = weakSelf.parentViewController.navigationController;
+        if (nav.interactivePopGestureRecognizer) {
+            nav.interactivePopGestureRecognizer.enabled = canPop;
+        }
+    };
 }
 
 - (void)show {

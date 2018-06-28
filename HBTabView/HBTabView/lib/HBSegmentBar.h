@@ -61,6 +61,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)selectItemWithIndex:(NSInteger)index;
 
+/**
+ 适当调整indicatorView的大小
+
+ @param index 当前选择item的索引
+ */
+- (void)adjustIndictorPositionWithIndex:(NSInteger)index;
+
+/**
+ indicatorView动态调整过程中，设置其对应的滚动位置
+
+ @param fromIndex 当前item对应的索引
+ @param toIndex 目的item对应的索引
+ @param progress 偏移量率(相对于contentView的变化率)
+ */
+- (void)indicatorScrollFromIndex:(NSInteger)fromIndex
+                         toIndex:(NSInteger)toIndex
+                        progress:(CGFloat)progress;
 @end
 
 NS_ASSUME_NONNULL_END

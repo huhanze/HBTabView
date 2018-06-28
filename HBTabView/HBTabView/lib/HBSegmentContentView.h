@@ -12,11 +12,14 @@
 @interface HBSegmentContentView : UIView
 
 /// UICollectionView结束拖拽回调
-@property (nonatomic, copy) void (^collectionViewDidEndDragingBlock)(NSInteger currentPageIndex);
+@property (nonatomic, copy) void (^segmentContentViewDidEndDragingBlock)(NSInteger currentPageIndex);
 /// UICollectionViewCell显示结束回调
-@property (nonatomic, copy) void (^collectionViewDidEndDisplayingCellBlock)(NSInteger currentPageIndex);
+@property (nonatomic, copy) void (^segmentContentViewDidEndDisplayingCellBlock)(NSInteger currentPageIndex);
 /// UICollectionView停止滚动回调
-@property (nonatomic, copy) void (^scrollViewDidScrollBlock)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^segmentContentViewDidScrollBlock)(UIScrollView *scrollView, NSInteger fromIndex, NSInteger toIndex, CGFloat progress);
+@property (nonatomic, copy) void (^segmentContentViewDidEndDeceleratingBlock)(NSInteger currentPageIndex);
+
+@property (nonatomic, copy) void (^segmentContentViewPanGestureBlock)(BOOL canPop);
 
 - (instancetype)initWithFrame:(CGRect)frame showType:(HBTabViewShowType)showType;
 
@@ -44,3 +47,9 @@
 
 @end
 
+
+@interface HBCollectionView : UICollectionView
+
+@property (nonatomic, copy) BOOL (^panGestureShouldBeginBlock)(UICollectionView *,UIPanGestureRecognizer *panGesture);
+
+@end

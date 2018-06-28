@@ -164,11 +164,13 @@ static const NSInteger kBaseItemTag = 10000;
 - (void)itemTouchUpInside:(UIButton *)sender {
     NSInteger index = sender.tag - kBaseItemTag;
     [self selectItemWithIndex:index];
+    [self setPositionForIndicatorView];
     if (self.segmentBarItemsDidClicked) {
         self.segmentBarItemsDidClicked(sender,index);
     }
 }
 
+#pragma mark 设置indicatorView的位置(初始化和item点击时)
 - (void)setPositionForIndicatorView {
     if (self.showType == HBTabViewShowTypeVertical) {
         self.indicatorView.hb_right = self.currentSelectedItem.hb_left;
@@ -189,6 +191,27 @@ static const NSInteger kBaseItemTag = 10000;
     }];
 }
 
+#pragma mark 适当调整indicatorView的大小
+- (void)adjustIndictorPositionWithIndex:(NSInteger)index {
+    [self selectItemWithIndex:index];
+    
+    if (self.showType == HBTabViewShowTypeVertical) {
+        self.indicatorView.hb_right = self.currentSelectedItem.hb_left;
+    } else {
+        self.indicatorView.hb_top = self.currentSelectedItem.hb_bottom;
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        if (self.showType == HBTabViewShowTypeVertical) {
+            self.indicatorView.hb_height = self.currentSelectedItem.titleLabel.hb_height;
+            self.indicatorView.hb_width = 3;
+        } else {
+            self.indicatorView.hb_width = self.currentSelectedItem.hb_width;
+            self.indicatorView.hb_height = 3;
+        }
+    }];
+}
+
 - (void)setPositionForSeperatorLine {
     if (self.showType == HBTabViewShowTypeVertical) {
         self.seperatorLine.frame = CGRectMake(self.bounds.size.width - 0.8, 0, 0.8, self.contentSize.height);
@@ -199,6 +222,7 @@ static const NSInteger kBaseItemTag = 10000;
 
 - (void)setDefaultPositionForIndicator {
     [self selectItemWithIndex:0];
+    [self setPositionForIndicatorView];
     if (self.showType == HBTabViewShowTypeVertical) {
         self.indicatorView.hb_centerY = self.currentSelectedItem.hb_centerY;
     } else {
@@ -220,13 +244,12 @@ static const NSInteger kBaseItemTag = 10000;
     self.currentIndex = index;
     self.currentSelectedItem = sender;
     sender.selected = YES;
-    [self setPositionForIndicatorView];
     if (self.currentIndex != self.preIndex) {
         [self setScrollPositionWithIndex:index];
     }
 }
 
-#pragma mark - 设置scrollView的公洞位置
+#pragma mark - 设置scrollView的滚动位置
 - (void)setScrollPositionWithIndex:(NSInteger)index {
     UIButton *item = self.items[index];
     CGFloat offsetX = item.center.x - self.bounds.size.width * 0.5;
@@ -246,6 +269,23 @@ static const NSInteger kBaseItemTag = 10000;
     }
     
     [self setContentOffset:CGPointMake(offsetX, offsetY) animated:YES];
+}
+
+#pragma mark 设置indicator的位置(item索引动态变化时)
+- (void)indicatorScrollFromIndex:(NSInteger)fromIndex
+                         toIndex:(NSInteger)toIndex
+                        progress:(CGFloat)progress {
+    UIButton *fromBtn = self.items[fromIndex];
+    UIButton *toBtn = self.items[toIndex < 0 ? 0 : toIndex];
+    CGFloat distance = toBtn.hb_left - fromBtn.hb_left;
+    if (self.showType == HBTabViewShowTypeVertical) {
+        distance = toBtn.hb_centerY - fromBtn.hb_centerY;
+        self.indicatorView.hb_centerY = fromBtn.hb_centerY + distance * progress;
+        self.indicatorView.hb_height = fromBtn.titleLabel.hb_height + (toBtn.titleLabel.hb_height - fromBtn.titleLabel.hb_height) * progress;
+    } else {
+        self.indicatorView.hb_left = fromBtn.hb_left + distance * progress;
+        self.indicatorView.hb_width = fromBtn.titleLabel.hb_width + (toBtn.titleLabel.hb_width - fromBtn.titleLabel.hb_width) * progress;
+    }
 }
 
 @end
