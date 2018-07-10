@@ -14,17 +14,17 @@
 		F76A05EE20CE14BC00B9D241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76A05ED20CE14BC00B9D241 /* Assets.xcassets */; };
 		F76A05F120CE14BC00B9D241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76A05EF20CE14BC00B9D241 /* LaunchScreen.storyboard */; };
 		F76A05F420CE14BC00B9D241 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A05F320CE14BC00B9D241 /* main.m */; };
-		F76A05FC20CE14D300B9D241 /* HBTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A05FB20CE14D300B9D241 /* HBTabView.m */; };
 		F76A060D20CE1F2B00B9D241 /* Test01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A060C20CE1F2B00B9D241 /* Test01ViewController.m */; };
 		F76A061020CE1F3900B9D241 /* Test02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A060F20CE1F3900B9D241 /* Test02ViewController.m */; };
 		F76A061320CE1F4B00B9D241 /* Test03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A061220CE1F4B00B9D241 /* Test03ViewController.m */; };
 		F76A061620CE1F5900B9D241 /* Test04ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A061520CE1F5900B9D241 /* Test04ViewController.m */; };
-		F77778EB20DBA5B500F0ED4C /* HBSegmentContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F77778EA20DBA5B500F0ED4C /* HBSegmentContentView.m */; };
-		F799993220CF64BB0094CD9B /* UIView+HHBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F799993020CF64BB0094CD9B /* UIView+HHBExtension.m */; };
-		F799993520CF65210094CD9B /* HBSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F799993420CF65210094CD9B /* HBSegmentBar.m */; };
 		F799993820CFC66D0094CD9B /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F799993620CFC66C0094CD9B /* weixin@2x.png */; };
 		F79EB16120E2308F0045F10D /* HBHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79EB16020E2308F0045F10D /* HBHorizontalViewController.m */; };
 		F79EB16420E230A20045F10D /* HBVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79EB16320E230A20045F10D /* HBVerticalViewController.m */; };
+		F7A0848F20F4558B008F637A /* UIView+HHBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0848720F4558A008F637A /* UIView+HHBExtension.m */; };
+		F7A0849A20F455BD008F637A /* HBSegmentContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849320F455BD008F637A /* HBSegmentContentView.m */; };
+		F7A0849B20F455BD008F637A /* HBTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849520F455BD008F637A /* HBTabView.m */; };
+		F7A0849C20F455BD008F637A /* HBSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849620F455BD008F637A /* HBSegmentBar.m */; };
 		F7A7242520D1133D00B8FE5E /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7242320D1133D00B8FE5E /* location@3x.png */; };
 		F7A7242620D1133D00B8FE5E /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7242420D1133D00B8FE5E /* location@2x.png */; };
 /* End PBXBuildFile section */
@@ -41,8 +41,6 @@
 		F76A05F020CE14BC00B9D241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F76A05F220CE14BC00B9D241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F76A05F320CE14BC00B9D241 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F76A05FA20CE14D300B9D241 /* HBTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBTabView.h; sourceTree = "<group>"; };
-		F76A05FB20CE14D300B9D241 /* HBTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBTabView.m; sourceTree = "<group>"; };
 		F76A060B20CE1F2B00B9D241 /* Test01ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test01ViewController.h; sourceTree = "<group>"; };
 		F76A060C20CE1F2B00B9D241 /* Test01ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test01ViewController.m; sourceTree = "<group>"; };
 		F76A060E20CE1F3900B9D241 /* Test02ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test02ViewController.h; sourceTree = "<group>"; };
@@ -51,18 +49,20 @@
 		F76A061220CE1F4B00B9D241 /* Test03ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test03ViewController.m; sourceTree = "<group>"; };
 		F76A061420CE1F5900B9D241 /* Test04ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test04ViewController.h; sourceTree = "<group>"; };
 		F76A061520CE1F5900B9D241 /* Test04ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test04ViewController.m; sourceTree = "<group>"; };
-		F77778E920DBA5B500F0ED4C /* HBSegmentContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBSegmentContentView.h; sourceTree = "<group>"; };
-		F77778EA20DBA5B500F0ED4C /* HBSegmentContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBSegmentContentView.m; sourceTree = "<group>"; };
-		F799993020CF64BB0094CD9B /* UIView+HHBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHBExtension.m"; sourceTree = "<group>"; };
-		F799993320CF65210094CD9B /* HBSegmentBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBSegmentBar.h; sourceTree = "<group>"; };
-		F799993420CF65210094CD9B /* HBSegmentBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBSegmentBar.m; sourceTree = "<group>"; };
 		F799993620CFC66C0094CD9B /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
-		F79EB15E20E1E81A0045F10D /* HBConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBConstant.h; sourceTree = "<group>"; };
 		F79EB15F20E2308F0045F10D /* HBHorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBHorizontalViewController.h; sourceTree = "<group>"; };
 		F79EB16020E2308F0045F10D /* HBHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBHorizontalViewController.m; sourceTree = "<group>"; };
 		F79EB16220E230A20045F10D /* HBVerticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBVerticalViewController.h; sourceTree = "<group>"; };
 		F79EB16320E230A20045F10D /* HBVerticalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBVerticalViewController.m; sourceTree = "<group>"; };
-		F7A61A0D20E4A7E800CEA1BF /* UIView+HHBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHBExtension.h"; sourceTree = "<group>"; };
+		F7A0848720F4558A008F637A /* UIView+HHBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHBExtension.m"; sourceTree = "<group>"; };
+		F7A0848820F4558A008F637A /* UIView+HHBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHBExtension.h"; sourceTree = "<group>"; };
+		F7A0849320F455BD008F637A /* HBSegmentContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSegmentContentView.m; sourceTree = "<group>"; };
+		F7A0849420F455BD008F637A /* HBSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSegmentBar.h; sourceTree = "<group>"; };
+		F7A0849520F455BD008F637A /* HBTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBTabView.m; sourceTree = "<group>"; };
+		F7A0849620F455BD008F637A /* HBSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSegmentBar.m; sourceTree = "<group>"; };
+		F7A0849720F455BD008F637A /* HBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBConstant.h; sourceTree = "<group>"; };
+		F7A0849820F455BD008F637A /* HBSegmentContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSegmentContentView.h; sourceTree = "<group>"; };
+		F7A0849920F455BD008F637A /* HBTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTabView.h; sourceTree = "<group>"; };
 		F7A7242320D1133D00B8FE5E /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
 		F7A7242420D1133D00B8FE5E /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,30 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F73806B920E36C3900B5A563 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				F73806BA20E36C6700B5A563 /* category */,
-				F76A05FA20CE14D300B9D241 /* HBTabView.h */,
-				F76A05FB20CE14D300B9D241 /* HBTabView.m */,
-				F799993320CF65210094CD9B /* HBSegmentBar.h */,
-				F799993420CF65210094CD9B /* HBSegmentBar.m */,
-				F77778E920DBA5B500F0ED4C /* HBSegmentContentView.h */,
-				F77778EA20DBA5B500F0ED4C /* HBSegmentContentView.m */,
-				F79EB15E20E1E81A0045F10D /* HBConstant.h */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		F73806BA20E36C6700B5A563 /* category */ = {
-			isa = PBXGroup;
-			children = (
-				F7A61A0D20E4A7E800CEA1BF /* UIView+HHBExtension.h */,
-				F799993020CF64BB0094CD9B /* UIView+HHBExtension.m */,
-			);
-			path = category;
-			sourceTree = "<group>";
-		};
 		F73806BD20E36C9800B5A563 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +127,9 @@
 		F76A05E320CE14BA00B9D241 /* HBTabView */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0848320F4558A008F637A /* HBTabViewLib */,
 				F73806BE20E36CC900B5A563 /* test */,
 				F73806BD20E36C9800B5A563 /* resources */,
-				F73806B920E36C3900B5A563 /* lib */,
 				F76A05E420CE14BA00B9D241 /* AppDelegate.h */,
 				F76A05E520CE14BA00B9D241 /* AppDelegate.m */,
 				F76A05E720CE14BA00B9D241 /* ViewController.h */,
@@ -165,6 +141,38 @@
 				F76A05F320CE14BC00B9D241 /* main.m */,
 			);
 			path = HBTabView;
+			sourceTree = "<group>";
+		};
+		F7A0848320F4558A008F637A /* HBTabViewLib */ = {
+			isa = PBXGroup;
+			children = (
+				F7A0849220F455BD008F637A /* lib */,
+				F7A0848620F4558A008F637A /* category */,
+			);
+			path = HBTabViewLib;
+			sourceTree = "<group>";
+		};
+		F7A0848620F4558A008F637A /* category */ = {
+			isa = PBXGroup;
+			children = (
+				F7A0848720F4558A008F637A /* UIView+HHBExtension.m */,
+				F7A0848820F4558A008F637A /* UIView+HHBExtension.h */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		F7A0849220F455BD008F637A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F7A0849320F455BD008F637A /* HBSegmentContentView.m */,
+				F7A0849420F455BD008F637A /* HBSegmentBar.h */,
+				F7A0849520F455BD008F637A /* HBTabView.m */,
+				F7A0849620F455BD008F637A /* HBSegmentBar.m */,
+				F7A0849720F455BD008F637A /* HBConstant.h */,
+				F7A0849820F455BD008F637A /* HBSegmentContentView.h */,
+				F7A0849920F455BD008F637A /* HBTabView.h */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,16 +251,16 @@
 			files = (
 				F76A05E920CE14BA00B9D241 /* ViewController.m in Sources */,
 				F79EB16420E230A20045F10D /* HBVerticalViewController.m in Sources */,
+				F7A0849B20F455BD008F637A /* HBTabView.m in Sources */,
+				F7A0848F20F4558B008F637A /* UIView+HHBExtension.m in Sources */,
+				F7A0849C20F455BD008F637A /* HBSegmentBar.m in Sources */,
 				F76A060D20CE1F2B00B9D241 /* Test01ViewController.m in Sources */,
 				F79EB16120E2308F0045F10D /* HBHorizontalViewController.m in Sources */,
 				F76A061020CE1F3900B9D241 /* Test02ViewController.m in Sources */,
-				F799993520CF65210094CD9B /* HBSegmentBar.m in Sources */,
+				F7A0849A20F455BD008F637A /* HBSegmentContentView.m in Sources */,
 				F76A05F420CE14BC00B9D241 /* main.m in Sources */,
 				F76A061620CE1F5900B9D241 /* Test04ViewController.m in Sources */,
-				F77778EB20DBA5B500F0ED4C /* HBSegmentContentView.m in Sources */,
 				F76A061320CE1F4B00B9D241 /* Test03ViewController.m in Sources */,
-				F76A05FC20CE14D300B9D241 /* HBTabView.m in Sources */,
-				F799993220CF64BB0094CD9B /* UIView+HHBExtension.m in Sources */,
 				F76A05E620CE14BA00B9D241 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
