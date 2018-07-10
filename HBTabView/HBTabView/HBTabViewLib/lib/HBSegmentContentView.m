@@ -124,7 +124,7 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
 
     !self.segmentContentViewDidEndDragingBlock ?: self.segmentContentViewDidEndDragingBlock(self.currentIndex);
 
-    NSLog(@"contentSize : %@ contentOffset : %@\n currentIndex: %zd",NSStringFromCGSize(scrollView.contentSize),NSStringFromCGPoint(scrollView.contentOffset),self.currentIndex);
+//    NSLog(@"contentSize : %@ contentOffset : %@\n currentIndex: %zd",NSStringFromCGSize(scrollView.contentSize),NSStringFromCGPoint(scrollView.contentOffset),self.currentIndex);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -156,7 +156,6 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
     }
     
     !self.segmentContentViewDidScrollBlock ?: self.segmentContentViewDidScrollBlock(scrollView,self.preIndex,self.currentIndex,progress);
-
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -179,7 +178,7 @@ static NSString * const reusedIdentifier = @"hb_segment_content_cell";
         index = collectionView.contentOffset.y / self.bounds.size.height;
     }
     
-    NSLog(@"contentOffset : %@\n currentIndex: %zd",NSStringFromCGPoint(collectionView.contentOffset),index);
+//    NSLog(@"contentOffset : %@\n currentIndex: %zd",NSStringFromCGPoint(collectionView.contentOffset),index);
 //    if (self.collectionViewDidEndDisplayingCellBlock) {
 //        self.collectionViewDidEndDisplayingCellBlock(index);
 //    }

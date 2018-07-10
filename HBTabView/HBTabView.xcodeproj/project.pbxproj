@@ -164,13 +164,13 @@
 		F7A0849220F455BD008F637A /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0849820F455BD008F637A /* HBSegmentContentView.h */,
 				F7A0849320F455BD008F637A /* HBSegmentContentView.m */,
 				F7A0849420F455BD008F637A /* HBSegmentBar.h */,
-				F7A0849520F455BD008F637A /* HBTabView.m */,
 				F7A0849620F455BD008F637A /* HBSegmentBar.m */,
-				F7A0849720F455BD008F637A /* HBConstant.h */,
-				F7A0849820F455BD008F637A /* HBSegmentContentView.h */,
 				F7A0849920F455BD008F637A /* HBTabView.h */,
+				F7A0849520F455BD008F637A /* HBTabView.m */,
+				F7A0849720F455BD008F637A /* HBConstant.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
