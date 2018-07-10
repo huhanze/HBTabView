@@ -10,9 +10,6 @@
 #import "HBHorizontalViewController.h"
 #import "HBVerticalViewController.h"
 
-#define keypath2(obj, path) \
-(((void)(NO && ((void)obj,path,NO)), #path))
-
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;

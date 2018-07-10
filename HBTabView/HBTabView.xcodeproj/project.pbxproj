@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F711631620D223DB0022DC07 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F711631520D223DB0022DC07 /* 1@2x.png */; };
 		F76A05E620CE14BA00B9D241 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A05E520CE14BA00B9D241 /* AppDelegate.m */; };
 		F76A05E920CE14BA00B9D241 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A05E820CE14BA00B9D241 /* ViewController.m */; };
 		F76A05EC20CE14BA00B9D241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76A05EA20CE14BA00B9D241 /* Main.storyboard */; };
@@ -18,19 +17,15 @@
 		F76A061020CE1F3900B9D241 /* Test02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A060F20CE1F3900B9D241 /* Test02ViewController.m */; };
 		F76A061320CE1F4B00B9D241 /* Test03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A061220CE1F4B00B9D241 /* Test03ViewController.m */; };
 		F76A061620CE1F5900B9D241 /* Test04ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76A061520CE1F5900B9D241 /* Test04ViewController.m */; };
-		F799993820CFC66D0094CD9B /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F799993620CFC66C0094CD9B /* weixin@2x.png */; };
 		F79EB16120E2308F0045F10D /* HBHorizontalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79EB16020E2308F0045F10D /* HBHorizontalViewController.m */; };
 		F79EB16420E230A20045F10D /* HBVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79EB16320E230A20045F10D /* HBVerticalViewController.m */; };
 		F7A0848F20F4558B008F637A /* UIView+HHBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0848720F4558A008F637A /* UIView+HHBExtension.m */; };
 		F7A0849A20F455BD008F637A /* HBSegmentContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849320F455BD008F637A /* HBSegmentContentView.m */; };
 		F7A0849B20F455BD008F637A /* HBTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849520F455BD008F637A /* HBTabView.m */; };
 		F7A0849C20F455BD008F637A /* HBSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0849620F455BD008F637A /* HBSegmentBar.m */; };
-		F7A7242520D1133D00B8FE5E /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7242320D1133D00B8FE5E /* location@3x.png */; };
-		F7A7242620D1133D00B8FE5E /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A7242420D1133D00B8FE5E /* location@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F711631520D223DB0022DC07 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
 		F76A05E120CE14BA00B9D241 /* HBTabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBTabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F76A05E420CE14BA00B9D241 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F76A05E520CE14BA00B9D241 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,7 +44,6 @@
 		F76A061220CE1F4B00B9D241 /* Test03ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test03ViewController.m; sourceTree = "<group>"; };
 		F76A061420CE1F5900B9D241 /* Test04ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test04ViewController.h; sourceTree = "<group>"; };
 		F76A061520CE1F5900B9D241 /* Test04ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test04ViewController.m; sourceTree = "<group>"; };
-		F799993620CFC66C0094CD9B /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
 		F79EB15F20E2308F0045F10D /* HBHorizontalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBHorizontalViewController.h; sourceTree = "<group>"; };
 		F79EB16020E2308F0045F10D /* HBHorizontalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBHorizontalViewController.m; sourceTree = "<group>"; };
 		F79EB16220E230A20045F10D /* HBVerticalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBVerticalViewController.h; sourceTree = "<group>"; };
@@ -63,8 +57,6 @@
 		F7A0849720F455BD008F637A /* HBConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBConstant.h; sourceTree = "<group>"; };
 		F7A0849820F455BD008F637A /* HBSegmentContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSegmentContentView.h; sourceTree = "<group>"; };
 		F7A0849920F455BD008F637A /* HBTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBTabView.h; sourceTree = "<group>"; };
-		F7A7242320D1133D00B8FE5E /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
-		F7A7242420D1133D00B8FE5E /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +73,6 @@
 		F73806BD20E36C9800B5A563 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				F711631520D223DB0022DC07 /* 1@2x.png */,
-				F7A7242420D1133D00B8FE5E /* location@2x.png */,
-				F7A7242320D1133D00B8FE5E /* location@3x.png */,
-				F799993620CFC66C0094CD9B /* weixin@2x.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -234,11 +222,7 @@
 			files = (
 				F76A05F120CE14BC00B9D241 /* LaunchScreen.storyboard in Resources */,
 				F76A05EE20CE14BC00B9D241 /* Assets.xcassets in Resources */,
-				F7A7242520D1133D00B8FE5E /* location@3x.png in Resources */,
-				F799993820CFC66D0094CD9B /* weixin@2x.png in Resources */,
-				F7A7242620D1133D00B8FE5E /* location@2x.png in Resources */,
 				F76A05EC20CE14BA00B9D241 /* Main.storyboard in Resources */,
-				F711631620D223DB0022DC07 /* 1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
